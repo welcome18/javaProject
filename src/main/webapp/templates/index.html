@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset="utf-8" />
+</head>
+<body>
+<afd:extension parent="/layout/common.html">
+	<afd:block override="content-title">
+		Asta4D Sample Project - Index
+	</afd:block>
+	<afd:block override="content-detail">
+	
+	<div class="panel panel-info panel-usage panel-usage-simple">
+		<div class="panel-heading"><h2>Simple usages</h2></div>
+		<div class="panel-body">
+			<ul>
+					<li><a href="/snippet">Use Snippet for rendering dynamic page.</a></li>
+					<li>Inject values of the variable.(/{name}/{age})
+						<ul>
+							<li><a href="/var-injection/foo/25">name=foo, age=25</a></li>
+							<li><a href="/var-injection/bar/20">name=bar, age=20</a></li>
+						</ul>
+					</li>
+					<li><a href="/attributevalues">Manipulate attribute values.</a></li>
+					<li><a href="/extend/appendchild">Template extension</a>
+					<li><a href="/embed/main">Embed other template.</a></li>
+					<!-- li><a href="/handler">Use Request Handler for side effects.</a></li-->
+					<li><a href="/localize">Localize Messages(i18n support).</a></li>
+					<li>Error handling
+						<ul>
+							<li><a href="/error-sample/handler404">404 exception by request handler</a></li>
+							<li><a href="/error-sample/handler">exception occurs at the request handler</a></li>
+							<li><a href="/error-sample/snippet">exception occurs at the snippet</a></li>
+						</ul>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="panel panel-warning panel-usage panel-usage-complicated">
+		<div class="panel-heading"><h2>Complicated usages</h2></div>
+		<div class="panel-body">
+			<ul>
+					<li>Form flow
+						<ul>
+							<li><a href="/form?type=singlestep">Single input step</a>
+							<li><a href="/form?type=multistep">Input, Confirm and Complete</a>
+							<li><a href="/form?type=cascade">Cascade and array field</a>
+							<li><a href="/form?type=multiinput">Multiple input steps</a>
+							<li><a href="/form?type=splittedinput">Splitted input steps</a>
+						</ul>
+					</li>
+					<li><a href="/renderertypes">Experience some type of Renderers.</a></li>
+					<li><a href="/passvariables">Pass variables from outer Snippet to inner Snippet.</a></li>
+					<li><a href="/contextdata?var=yyy">Use ContextData annotation.</a></li>
+					
+			</ul>
+		</div>
+	</div>
+	</afd:block>
+</afd:extension>
+</body>
+</html>

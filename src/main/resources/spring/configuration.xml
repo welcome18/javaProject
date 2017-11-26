@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+    <bean id="asta4dConfiguration" class="com.astamuse.asta4d.web.WebApplicationConfiguration">
+        <property name="snippetResolver">
+            <bean class="com.astamuse.asta4d.misc.spring.SpringManagedSnippetResolver"/>
+        </property>
+        <property name="instanceResolverList">
+            <list>
+                <bean class="com.astamuse.asta4d.misc.spring.SpringManagedInstanceResolver"/>
+            </list>
+        </property>
+        <property name="pageInterceptorList">
+            <list>
+                <bean class="java.interceptor.SamplePageInterceptor"/>
+            </list>
+        </property>
+        <property name="snippetInvoker">
+            <bean id="snippetInvoker" class="com.astamuse.asta4d.snippet.DefaultSnippetInvoker">
+                <property name="snippetInterceptorList">
+                    <list>
+                        <bean class="java.interceptor.SampleSnippetInterceptor"/>
+                    </list>
+                </property>
+            </bean>        
+        </property>
+        <property name="urlMappingRuleInitializer">
+            <bean class="java.UrlRules"/>
+        </property>
+    </bean>
+    
+    <bean id="ComplicatedSnippet" class="java.snippet.ComplicatedSnippet" scope="prototype"/>
+    <bean id="FormSnippet" class="java.snippet.FormSnippet" scope="prototype"/>
+    <bean id="SimpleSnippet" class="java.snippet.SimpleSnippet" scope="prototype"/>
+    <bean id="ShowCodeSnippet" class="java.snippet.ShowCodeSnippet" scope="prototype"/>
+    
+    <bean class="java.handler.LoginHandler"/>
+    
+
+</beans>
